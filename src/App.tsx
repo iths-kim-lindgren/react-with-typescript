@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { fetchQuizQuestions } from './API';
 // Components
 import QuestionCard from './components/QuestionCard'
+import Form from './components/Form'
 // Types
 import { QuestionState, Difficulty } from './API';
 // Styles
@@ -33,7 +34,7 @@ const App = () => {
 
         const newQuestions = await fetchQuizQuestions(
             TOTAL_QUESTIONS,
-            Difficulty.EASY
+            Difficulty.MEDIUM
         );
 
         setQuestions(newQuestions);
@@ -77,6 +78,7 @@ const App = () => {
     return (
         <>
             <GlobalStyle />
+            <Form />
             <Wrapper>
                 <h1>REACT QUIZ</h1>
                 {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
