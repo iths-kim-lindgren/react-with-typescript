@@ -3,6 +3,7 @@ import { fetchQuizQuestions } from './API';
 // Components
 import QuestionCard from './components/QuestionCard'
 import Form from './components/Form'
+import { APIComponent } from './components/APIComponent'
 // Types
 import { QuestionState, Difficulty } from './API';
 // Styles
@@ -79,6 +80,7 @@ const App = () => {
         <>
             <GlobalStyle />
             <Form />
+            <APIComponent />
             <Wrapper>
                 <h1>REACT QUIZ</h1>
                 {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
